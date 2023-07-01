@@ -18,7 +18,7 @@ class _LoginUiPageState extends State<LoginUiPage> {
         title: const Text('LoginUiPage'),
       ),*/
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color.fromARGB(255, 9, 10, 24),
           ),
           
@@ -30,10 +30,10 @@ class _LoginUiPageState extends State<LoginUiPage> {
                 children: <Widget>[
                   Container(
                     margin: const EdgeInsets.all(0),
-                    padding: EdgeInsets.all(0),
-                    child: Column(
+                    padding: const EdgeInsets.all(0),
+                    child: const Column(
                       children: [
-                        const Text(
+                         Text(
                           'Sesión',
                           style: TextStyle(
                             color: Colors.white,
@@ -42,7 +42,7 @@ class _LoginUiPageState extends State<LoginUiPage> {
                           ),
                         ),
                         //
-                        const Text(
+                         Text(
                           'admin:1234',
                           style: TextStyle(
                             color: Colors.white,
@@ -52,7 +52,7 @@ class _LoginUiPageState extends State<LoginUiPage> {
                       ],
                     ),
                   ),
-                  FormLogin()
+                  const FormLogin()
 
                 ],
               ),
@@ -65,7 +65,7 @@ class _LoginUiPageState extends State<LoginUiPage> {
 }
 
 class FormLogin extends StatefulWidget {
-  FormLogin({Key? key}) : super(key: key);
+  const FormLogin({Key? key}) : super(key: key);
 
 
   @override
@@ -144,11 +144,11 @@ class _FormLoginState extends State<FormLogin> {
                         255, 255, 255, 255),
                     ),*/
                       hintText: 'Usuario',
-                      hintStyle: TextStyle(
-                        color: const Color(0x99EFEFEF),
+                      hintStyle: const TextStyle(
+                        color: Color(0x99EFEFEF),
                       ),
                       //Text color wrote
-                      labelStyle: TextStyle(color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white),
                     ),
                     onChanged: (text) {
                       setState(() {
@@ -170,7 +170,7 @@ class _FormLoginState extends State<FormLogin> {
                   padding: const EdgeInsets.only(left: 20, right: 20),
                   child: TextField(
                     obscureText: true,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       //padding
                       contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
@@ -186,11 +186,11 @@ class _FormLoginState extends State<FormLogin> {
                         255, 255, 255, 255),
                     ),*/
                       hintText: 'Contraseña',
-                      hintStyle: TextStyle(
-                        color: const Color(0x99EFEFEF),
+                      hintStyle: const TextStyle(
+                        color:  Color(0x99EFEFEF),
                       ),
                       //Text color wrote
-                      labelStyle: TextStyle(color: Colors.white),
+                      labelStyle: const TextStyle(color: Colors.white),
                     ),
                     onChanged: (text) {
                       setState(() {
@@ -207,12 +207,12 @@ class _FormLoginState extends State<FormLogin> {
             children: [
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.symmetric(vertical : 0, horizontal: 30),
+                  padding: const EdgeInsets.symmetric(vertical : 0, horizontal: 30),
                   child: Center(child: 
                   Text(
                   messageErrorForm,
-                  style: TextStyle(
-                    color: const Color.fromARGB(255, 255, 106, 95),
+                  style:const  TextStyle(
+                    color:  Color.fromARGB(255, 255, 106, 95),
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
                   )),
@@ -225,7 +225,7 @@ class _FormLoginState extends State<FormLogin> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),

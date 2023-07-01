@@ -11,7 +11,7 @@ class MainRouter extends StatelessWidget  {
     initialLocation: '/',
     routes: [
       GoRoute(
-        name: 'home', // Optional, add name to your routes. Allows you navigate by name instead of path
+        name: 'home',
         path: '/',
         builder: (context, state) => const LoginUiPage(),
       ),

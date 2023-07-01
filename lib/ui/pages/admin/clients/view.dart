@@ -13,7 +13,7 @@ class AdminClients extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: 
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Color.fromARGB(255, 9, 10, 24),
           ),
           child: Column(
@@ -32,7 +32,7 @@ class _CustomCarouselSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 40, bottom: 0),
+      margin: const EdgeInsets.only(top: 40, bottom: 0),
       width: MediaQuery.of(context).size.width,
       child: CarouselSlider(
         options: CarouselOptions(
@@ -40,8 +40,8 @@ class _CustomCarouselSlider extends StatelessWidget {
           enableInfiniteScroll: true,
           reverse: false,
           autoPlay: true,
-          autoPlayInterval: Duration(seconds: 3),
-          autoPlayAnimationDuration: Duration(milliseconds: 1000),
+          autoPlayInterval: const Duration(seconds: 3),
+          autoPlayAnimationDuration: const Duration(milliseconds: 1000),
           aspectRatio: 2.0,
           enlargeCenterPage: true,
           enlargeStrategy: CenterPageEnlargeStrategy.height,
@@ -57,12 +57,7 @@ class _CustomCarouselSlider extends StatelessWidget {
             builder: (BuildContext context) {
               return Container(
                 width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 10),
-                decoration: BoxDecoration(
-                  //color: Colors.amber
-                  
-                  
-                ),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20), // Agrega el radio del borde deseado
                   child: Image(
@@ -87,8 +82,11 @@ class _DataClients extends StatefulWidget {
 class _DataClientsState extends State<_DataClients> {
   int _selectedRow = -1; // Variable para realizar un seguimiento de la fila seleccionada
 
-   showDetails(BuildContext context, var client){
-    
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print(_selectedRow);
   }
 
   @override
@@ -100,8 +98,8 @@ class _DataClientsState extends State<_DataClients> {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                child: Text(
+                padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                child: const Text(
                   "Clientes",
                   style: TextStyle(
                     color: Colors.white,
@@ -114,17 +112,17 @@ class _DataClientsState extends State<_DataClients> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            padding: EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
             child: Container(
               margin: const EdgeInsets.only(top: 20),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DataTable(
                 //columnSpacing: 100,
                 // Ajusta el ancho de las columnas
-                columns: [
+                columns: const [
                   DataColumn(
                     label: Expanded(
                       child: Text('Nombre'),
@@ -149,7 +147,7 @@ class _DataClientsState extends State<_DataClients> {
                 rows: ClientsFakeData.fakeClients.asMap().entries.map((entry) {
                   final index = entry.key;
                   final client = entry.value;
-                  final isSelected = index == _selectedRow;
+                  //final isSelected = index == _selectedRow;
 
                   return DataRow(
                     onSelectChanged: (bool? selected) {
@@ -170,48 +168,7 @@ class _DataClientsState extends State<_DataClients> {
                               ),
                             ],
                             content: Text(
-                              "Fecha de Corte: ${client['FECHA_CORTE']}\n" + 
-                              "Codigo Promotor: ${client['COD_PROMOTOR']}\n" +
-                              "Nombre Promotor: ${client['NOM_PROMOTOR']}\n" +
-                              "DPI: ${client['DPI']}\n" +
-                              "Nombre Cliente: ${client['NOMBRE_CLIENTE']}\n" +
-                              "Edad Cliente: ${client['EDAD_CTE']}\n" +
-                              "Telefono Principal: ${client['TEL_PRINCIPAL']}\n" +
-                              "Telefono Secundario: ${client['TEL_SECUNDARIO']}\n" +
-                              "Direccion Domicilio: ${client['DIRECCION_DOM']}\n" +
-                              "Departamento: ${client['DEPARTAMENTO']}\n" +
-                              "Municipio: ${client['MUNICIPIO']}\n" +
-                              "Nombre Region: ${client['NOM_REGION']}\n" +
-                              "Sucursal: ${client['SUCURSAL']}\n" +
-                              "FUD Cliente: ${client['FUD_CLIENTE']}\n" +
-                              "Prestamo: ${client['PRESTAMO']}\n" +
-                              "Fecha Vencimiento: ${client['FEC_VENCIMIENTO']}\n" +
-                              "Fecha Entrega: ${client['FEC_ENTREGA']}\n" +
-                              "Plazo: ${client['PLAZO']}\n" +
-                              "Producto: ${client['PRODUCTO']}\n" +
-                              "Sub Producto: ${client['SUB_PRODUCTO']}\n" +
-                              "Descripcion Producto: ${client['DESCRIPCION_PRODUCTO']}\n" +
-                              "Nombre Grupo: ${client['NOMBRE_GRUPO']}\n" +
-                              "Integrantes: ${client['INTEGRANTES']}\n" +
-                              "Capital Otorgado: ${client['CAPITAL_OTORGADO']}\n" +
-                              "Saldo Capital: ${client['SALDO_CAPITAL']}\n" +
-                              "Oferta Comercial: ${client['OFERTA_COMERCIAL']}\n" +
-                              "Dias Atraso Cierre: ${client['DIAS_ATRASO_CIERRE']}\n" +
-                              "Tipo Cliente: ${client['TIPO_CLIENTE']}\n" +
-                              "Operaciones: ${client['OPERACIONES']}\n" +
-                              "Observacion: ${client['OBSERVACION']}\n" +
-                              "Tipo Riesgo: ${client['TIPORIESGO']}\n" +
-                              "Graduacion: ${client['GRADUACION']}\n" +
-                              "Tipo Campania: ${client['TIPOCAMPANIA']}\n" +
-                              "Segmento Cliente: ${client['SEG_CLIENTE']}\n" +
-                              "Segmento Desercion: ${client['SEG_DESERCION']}\n" +
-                              "Segmento Cobranza: ${client['SEG_COBRANZA']}\n" +
-                              "Sub Segmento Cobranza: ${client['SUB_SEG_COBRANZA']}\n" +
-                              "Aprobado: ${client['APROBADO']}\n" +
-                              "Descripcion Rechazo: ${client['DESC_RECHAZO']}\n" +
-                              "Identificador: ${client['IDENTIFICADOR']}\n" +
-                              "Codigo Sucursal: ${client['COD_SUCURSAL']}\n" +
-                              "Estado Colocado: ${client['ESTADO_COLOCADO']}\n"
+                              "Fecha de Corte: ${client['FECHA_CORTE']}\nCodigo Promotor: ${client['COD_PROMOTOR']}\nNombre Promotor: ${client['NOM_PROMOTOR']}\nDPI: ${client['DPI']}\nNombre Cliente: ${client['NOMBRE_CLIENTE']}\nEdad Cliente: ${client['EDAD_CTE']}\nTelefono Principal: ${client['TEL_PRINCIPAL']}\nTelefono Secundario: ${client['TEL_SECUNDARIO']}\nDireccion Domicilio: ${client['DIRECCION_DOM']}\nDepartamento: ${client['DEPARTAMENTO']}\nMunicipio: ${client['MUNICIPIO']}\nNombre Region: ${client['NOM_REGION']}\nSucursal: ${client['SUCURSAL']}\nFUD Cliente: ${client['FUD_CLIENTE']}\nPrestamo: ${client['PRESTAMO']}\nFecha Vencimiento: ${client['FEC_VENCIMIENTO']}\nFecha Entrega: ${client['FEC_ENTREGA']}\nPlazo: ${client['PLAZO']}\nProducto: ${client['PRODUCTO']}\nSub Producto: ${client['SUB_PRODUCTO']}\nDescripcion Producto: ${client['DESCRIPCION_PRODUCTO']}\nNombre Grupo: ${client['NOMBRE_GRUPO']}\nIntegrantes: ${client['INTEGRANTES']}\nCapital Otorgado: ${client['CAPITAL_OTORGADO']}\nSaldo Capital: ${client['SALDO_CAPITAL']}\nOferta Comercial: ${client['OFERTA_COMERCIAL']}\nDias Atraso Cierre: ${client['DIAS_ATRASO_CIERRE']}\nTipo Cliente: ${client['TIPO_CLIENTE']}\nOperaciones: ${client['OPERACIONES']}\nObservacion: ${client['OBSERVACION']}\nTipo Riesgo: ${client['TIPORIESGO']}\nGraduacion: ${client['GRADUACION']}\nTipo Campania: ${client['TIPOCAMPANIA']}\nSegmento Cliente: ${client['SEG_CLIENTE']}\nSegmento Desercion: ${client['SEG_DESERCION']}\nSegmento Cobranza: ${client['SEG_COBRANZA']}\nSub Segmento Cobranza: ${client['SUB_SEG_COBRANZA']}\nAprobado: ${client['APROBADO']}\nDescripcion Rechazo: ${client['DESC_RECHAZO']}\nIdentificador: ${client['IDENTIFICADOR']}\nCodigo Sucursal: ${client['COD_SUCURSAL']}\nEstado Colocado: ${client['ESTADO_COLOCADO']}\n"
                             )
                           )
                         
