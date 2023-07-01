@@ -19,7 +19,7 @@ class _LoginUiPageState extends State<LoginUiPage> {
       ),*/
         body: Container(
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 33, 71, 73),
+            color: Color.fromARGB(255, 9, 10, 24),
           ),
           
           child: PageView(
