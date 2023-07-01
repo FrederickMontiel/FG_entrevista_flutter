@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pruebagfg/ui/router.dart';
 
 void main() {
+
+  //SystemChrome.setEnabledSystemUIMode([SystemUiOverlay.bottom] as SystemUiMode);
+  //SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  //SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom]);
+  //Hide StatusBar
+  //
+
+
   runApp(MainRouter());
 }
+
 
 /*
   class MyApp extends StatelessWidget {
